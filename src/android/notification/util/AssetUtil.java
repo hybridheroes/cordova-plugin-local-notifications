@@ -90,8 +90,8 @@ public final class AssetUtil {
             return getUriFromAsset(path);
         } else if (path.startsWith("http")){
             return getUriFromRemote(path);
-        } else if (path.startsWith("content://")){
-            return Uri.parse(path);
+        } else if (path.startsWith("content:")){
+            return getUriFromContent(path);
         }
 
         return Uri.EMPTY;
@@ -103,6 +103,20 @@ public final class AssetUtil {
      * @param path Absolute path like file:///...
      *
      * @return URI pointing to the given path.
+     */
+    private Uri getUriFromContent(String path) {
+        return Uri.parse(path);
+    }
+
+
+    /**
+     * URI for a file.
+     *
+     * @param path
+     *      Absolute path like file:///...
+     *
+     * @return
+     *      URI pointing to the given path
      */
     private Uri getUriFromPath(String path) {
         String absPath = path.replaceFirst("file://", "")
