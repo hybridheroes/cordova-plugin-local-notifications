@@ -27,6 +27,10 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.UserManager;
+<<<<<<< HEAD
+=======
+
+>>>>>>> fix: remove bug on Android >= 8
 
 import org.json.JSONObject;
 
@@ -59,8 +63,9 @@ abstract public class AbstractRestoreReceiver extends BroadcastReceiver {
         String action = intent.getAction();
 
         if (SDK_INT >= 24) {
-          UserManager um = (UserManager) context.getSystemService(UserManager.class);
-          if (um == null || um.isUserUnlocked() == false) return;
+            UserManager um = (UserManager) context.getSystemService(UserManager.class);
+            if (um == null || um.isUserUnlocked() == false)
+                return;
         }
 
         Manager mgr               = Manager.getInstance(context);
