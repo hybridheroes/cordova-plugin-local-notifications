@@ -27,10 +27,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.UserManager;
-<<<<<<< HEAD
-=======
-
->>>>>>> fix: remove bug on Android >= 8
 
 import org.json.JSONObject;
 
